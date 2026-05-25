@@ -1,0 +1,716 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.UIAutomationNext</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.FlowAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.Text</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics.Telemetry</x:String>
+      <x:String>Microsoft.CodeAnalysis.Operations</x:String>
+      <x:String>Microsoft.CodeAnalysis.Emit</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Validation</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.Features</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="1402,1785" sap2010:WorkflowViewState.IdRef="Sequence_24">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd2:DataTable" Name="DataTable" />
+      <Variable x:TypeArguments="x:Int32" Default="2500000" Name="vIntValue" />
+      <Variable x:TypeArguments="sd2:DataTable" Name="vSDT" />
+      <Variable x:TypeArguments="x:Object" Name="WSSessionData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="452,79" sap2010:WorkflowViewState.IdRef="ManualTrigger_9" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Apartamentos en Arriendo en Colombia" sap:VirtualizedContainerService.HintSize="452,1683" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" InteractionMode="DebuggerApi" ScopeGuid="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1489" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick DisplayName="Click 'Ordenar por'" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_71" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NClick.ActivateBefore>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_9" Value="True" />
+                </InArgument>
+              </uix:NClick.ActivateBefore>
+              <uix:NClick.ClickType>
+                <InArgument x:TypeArguments="uix:NClickType">
+                  <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_7" />
+                </InArgument>
+              </uix:NClick.ClickType>
+              <uix:NClick.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_11" />
+                </InArgument>
+              </uix:NClick.HealingAgentBehavior>
+              <uix:NClick.InteractionMode>
+                <InArgument x:TypeArguments="uix:NChildInteractionMode">
+                  <Literal x:TypeArguments="uix:NChildInteractionMode" sap2010:WorkflowViewState.IdRef="Literal`1_10" />
+                </InArgument>
+              </uix:NClick.InteractionMode>
+              <uix:NClick.KeyModifiers>
+                <InArgument x:TypeArguments="uix:NKeyModifiers">
+                  <Literal x:TypeArguments="uix:NKeyModifiers" sap2010:WorkflowViewState.IdRef="Literal`1_6" />
+                </InArgument>
+              </uix:NClick.KeyModifiers>
+              <uix:NClick.MouseButton>
+                <InArgument x:TypeArguments="uix:NMouseButton">
+                  <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_8" />
+                </InArgument>
+              </uix:NClick.MouseButton>
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="ciencuadras.com/arriendo/apartamento" ContentHash="BFk1nZMnoUa_W8eyCswQow" DesignTimeRectangle="1708, 280, 192, 67" Guid="d86b09b4-62d7-4427-b5ec-0f1e9e828a7d" InformativeScreenshot="93c4fd27652d9a9cdaa0e821498cc8ad.jpg" Reference="gmLmTZsweUuVZUTtZ26j-w/iG0ZVnR3i02fGw81zExKRg" SearchSteps="Selector" Version="V6">
+                  <uix:TargetAnchorable.ElementVisibilityArgument>
+                    <InArgument x:TypeArguments="uix:NElementVisibility">
+                      <Literal x:TypeArguments="uix:NElementVisibility" sap2010:WorkflowViewState.IdRef="Literal`1_42" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.ElementVisibilityArgument>
+                  <uix:TargetAnchorable.FullSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_45">&lt;webctrl css-selector='body&amp;gt;ciencuadras-root&amp;gt;ciencuadras-shell-app&amp;gt;main&amp;gt;div&amp;gt;ciencuadras-result-entry&amp;gt;main&amp;gt;section&amp;gt;aside&amp;gt;ciencuadras-container-top&amp;gt;div&amp;gt;ciencuadras-search&amp;gt;div&amp;gt;div&amp;gt;ciencuadras-select&amp;gt;mat-form-field&amp;gt;div&amp;gt;div' parentid='main' tag='DIV' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.FullSelectorArgument>
+                  <uix:TargetAnchorable.ScopeSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_43">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.ScopeSelectorArgument>
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_44" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick DisplayName="Click 'Menor precio'" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_72" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NClick.ActivateBefore>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_15" Value="True" />
+                </InArgument>
+              </uix:NClick.ActivateBefore>
+              <uix:NClick.ClickType>
+                <InArgument x:TypeArguments="uix:NClickType">
+                  <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_13" />
+                </InArgument>
+              </uix:NClick.ClickType>
+              <uix:NClick.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_17" />
+                </InArgument>
+              </uix:NClick.HealingAgentBehavior>
+              <uix:NClick.InteractionMode>
+                <InArgument x:TypeArguments="uix:NChildInteractionMode">
+                  <Literal x:TypeArguments="uix:NChildInteractionMode" sap2010:WorkflowViewState.IdRef="Literal`1_16" />
+                </InArgument>
+              </uix:NClick.InteractionMode>
+              <uix:NClick.KeyModifiers>
+                <InArgument x:TypeArguments="uix:NKeyModifiers">
+                  <Literal x:TypeArguments="uix:NKeyModifiers" sap2010:WorkflowViewState.IdRef="Literal`1_12" />
+                </InArgument>
+              </uix:NClick.KeyModifiers>
+              <uix:NClick.MouseButton>
+                <InArgument x:TypeArguments="uix:NMouseButton">
+                  <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_14" />
+                </InArgument>
+              </uix:NClick.MouseButton>
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="ciencuadras.com/arriendo/apartamento" ContentHash="65-fhaAD0Ui7wCjV0q7d2Q" DesignTimeRectangle="1679, 410, 221, 60" Guid="fe29698a-1a1f-4f3f-8cff-09cbbc3c790e" InformativeScreenshot="f925f73882df03c82b844fc4f4a2b18f.jpg" Reference="gmLmTZsweUuVZUTtZ26j-w/4X1Ean3zi0C39JfyoYWbIQ" SearchSteps="Selector" Version="V6">
+                  <uix:TargetAnchorable.ElementVisibilityArgument>
+                    <InArgument x:TypeArguments="uix:NElementVisibility">
+                      <Literal x:TypeArguments="uix:NElementVisibility" sap2010:WorkflowViewState.IdRef="Literal`1_46" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.ElementVisibilityArgument>
+                  <uix:TargetAnchorable.FullSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_49">&lt;webctrl id='mat-option-1' tag='MAT-OPTION' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.FullSelectorArgument>
+                  <uix:TargetAnchorable.ScopeSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_47">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.ScopeSelectorArgument>
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_48" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick DisplayName="Click 'Precio mÃƒÂ¡ximo'" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_73" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NClick.ActivateBefore>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_21" Value="True" />
+                </InArgument>
+              </uix:NClick.ActivateBefore>
+              <uix:NClick.ClickType>
+                <InArgument x:TypeArguments="uix:NClickType">
+                  <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_19" />
+                </InArgument>
+              </uix:NClick.ClickType>
+              <uix:NClick.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_23" />
+                </InArgument>
+              </uix:NClick.HealingAgentBehavior>
+              <uix:NClick.InteractionMode>
+                <InArgument x:TypeArguments="uix:NChildInteractionMode">
+                  <Literal x:TypeArguments="uix:NChildInteractionMode" sap2010:WorkflowViewState.IdRef="Literal`1_22" />
+                </InArgument>
+              </uix:NClick.InteractionMode>
+              <uix:NClick.KeyModifiers>
+                <InArgument x:TypeArguments="uix:NKeyModifiers">
+                  <Literal x:TypeArguments="uix:NKeyModifiers" sap2010:WorkflowViewState.IdRef="Literal`1_18" />
+                </InArgument>
+              </uix:NClick.KeyModifiers>
+              <uix:NClick.MouseButton>
+                <InArgument x:TypeArguments="uix:NMouseButton">
+                  <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_20" />
+                </InArgument>
+              </uix:NClick.MouseButton>
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="ciencuadras.com/arriendo/apartamento" ContentHash="moLQ0ziIyEmDY4J_YpM63Q" DesignTimeRectangle="309, 573, 255, 67" ElementType="InputBox" Guid="3487aed2-da56-45e1-90fb-3d09cc8bd977" InformativeScreenshot="9de6c3b0681ee47f8f9a5c0892242e95.jpg" IsResponsive="True" Reference="gmLmTZsweUuVZUTtZ26j-w/KmE_H8vKAEmbjPpCqLG8OQ" SearchSteps="FuzzySelector" Version="V6">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="309, 545, 138, 25" ElementType="Text" Guid="d3e4560f-dbef-4c39-96b0-3930ef2b05f4" SearchSteps="FuzzySelector">
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_66">&lt;webctrl aaname='Precio mÃƒÂ¡ximo' class='form__span' parentid='pdfContainer' tag='SPAN' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' check:innerText='Precio mÃƒÂ¡ximo' /&gt;</Literal>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.ElementVisibilityArgument>
+                    <InArgument x:TypeArguments="uix:NElementVisibility">
+                      <Literal x:TypeArguments="uix:NElementVisibility" sap2010:WorkflowViewState.IdRef="Literal`1_50" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.ElementVisibilityArgument>
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_53">&lt;webctrl type='' class='mat-form-field-flex ng-tns-c107-15' parentid='pdfContainer' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                  <uix:TargetAnchorable.ScopeSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_51">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.ScopeSelectorArgument>
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_52" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto DisplayName="Type Into 'Precio mÃƒÂ¡ximo'" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NTypeInto.ActivateBefore>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_24" Value="True" />
+                </InArgument>
+              </uix:NTypeInto.ActivateBefore>
+              <uix:NTypeInto.ClickBeforeMode>
+                <InArgument x:TypeArguments="uix:NClickMode">
+                  <Literal x:TypeArguments="uix:NClickMode" sap2010:WorkflowViewState.IdRef="Literal`1_25" Value="Single" />
+                </InArgument>
+              </uix:NTypeInto.ClickBeforeMode>
+              <uix:NTypeInto.ClipboardMode>
+                <InArgument x:TypeArguments="uix:NTypeByClipboardMode">
+                  <Literal x:TypeArguments="uix:NTypeByClipboardMode" sap2010:WorkflowViewState.IdRef="Literal`1_27" />
+                </InArgument>
+              </uix:NTypeInto.ClipboardMode>
+              <uix:NTypeInto.EmptyFieldMode>
+                <InArgument x:TypeArguments="uix:NEmptyFieldMode">
+                  <Literal x:TypeArguments="uix:NEmptyFieldMode" sap2010:WorkflowViewState.IdRef="Literal`1_26" Value="SingleLine" />
+                </InArgument>
+              </uix:NTypeInto.EmptyFieldMode>
+              <uix:NTypeInto.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_29" />
+                </InArgument>
+              </uix:NTypeInto.HealingAgentBehavior>
+              <uix:NTypeInto.InteractionMode>
+                <InArgument x:TypeArguments="uix:NChildInteractionMode">
+                  <Literal x:TypeArguments="uix:NChildInteractionMode" sap2010:WorkflowViewState.IdRef="Literal`1_28" />
+                </InArgument>
+              </uix:NTypeInto.InteractionMode>
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="ciencuadras.com/arriendo/apartamento" ContentHash="TOtJAjqvAU2q65DD2l5c6w" DesignTimeRectangle="309, 573, 255, 67" ElementType="InputBox" Guid="2f22bf3f-ff39-4641-98db-40b5fbef00d7" InformativeScreenshot="9de6c3b0681ee47f8f9a5c0892242e95.jpg" IsResponsive="True" Reference="gmLmTZsweUuVZUTtZ26j-w/Gh31mTEwVkCGTqlvvM2FDw" SearchSteps="FuzzySelector" Version="V6">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="309, 545, 138, 25" ElementType="Text" Guid="599fb755-1a71-4b93-81c0-66fff017a0d1" SearchSteps="FuzzySelector">
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_67">&lt;webctrl aaname='Precio mÃƒÂ¡ximo' class='form__span' parentid='pdfContainer' tag='SPAN' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' check:innerText='Precio mÃƒÂ¡ximo' /&gt;</Literal>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.ElementVisibilityArgument>
+                    <InArgument x:TypeArguments="uix:NElementVisibility">
+                      <Literal x:TypeArguments="uix:NElementVisibility" sap2010:WorkflowViewState.IdRef="Literal`1_54" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.ElementVisibilityArgument>
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_57">&lt;webctrl type='' class='mat-form-field-flex ng-tns-c107-15' parentid='pdfContainer' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                  <uix:TargetAnchorable.ScopeSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_55">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.ScopeSelectorArgument>
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_56" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="vIntValue.ToString()" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                </InArgument>
+              </uix:NTypeInto.Text>
+            </uix:NTypeInto>
+            <uix:NClick DisplayName="Click 'Aplicar filtros(1)'" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_74" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NClick.ActivateBefore>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_33" Value="True" />
+                </InArgument>
+              </uix:NClick.ActivateBefore>
+              <uix:NClick.ClickType>
+                <InArgument x:TypeArguments="uix:NClickType">
+                  <Literal x:TypeArguments="uix:NClickType" sap2010:WorkflowViewState.IdRef="Literal`1_31" />
+                </InArgument>
+              </uix:NClick.ClickType>
+              <uix:NClick.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_35" />
+                </InArgument>
+              </uix:NClick.HealingAgentBehavior>
+              <uix:NClick.InteractionMode>
+                <InArgument x:TypeArguments="uix:NChildInteractionMode">
+                  <Literal x:TypeArguments="uix:NChildInteractionMode" sap2010:WorkflowViewState.IdRef="Literal`1_34" />
+                </InArgument>
+              </uix:NClick.InteractionMode>
+              <uix:NClick.KeyModifiers>
+                <InArgument x:TypeArguments="uix:NKeyModifiers">
+                  <Literal x:TypeArguments="uix:NKeyModifiers" sap2010:WorkflowViewState.IdRef="Literal`1_30" />
+                </InArgument>
+              </uix:NClick.KeyModifiers>
+              <uix:NClick.MouseButton>
+                <InArgument x:TypeArguments="uix:NMouseButton">
+                  <Literal x:TypeArguments="uix:NMouseButton" sap2010:WorkflowViewState.IdRef="Literal`1_32" />
+                </InArgument>
+              </uix:NClick.MouseButton>
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="ciencuadras.com/arriendo/apartamento" ContentHash="V2fDTy-7HU6ty4YCQSnrtw" DesignTimeRectangle="426, 984, 129, 25" ElementType="Text" Guid="de721dcf-84ab-4a6a-951c-1450c8faeb95" InformativeScreenshot="e56272ff937e442d582667499d631f5e.jpg" Reference="gmLmTZsweUuVZUTtZ26j-w/pxsIN991jE6bVqr5SBKVlQ" SearchSteps="FuzzySelector" Version="V6">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="33e03b03-4509-47e3-a5e4-7a1b15440ced" CvElementArea="401, 969, 179, 56" CvTextArea="422, 985, 134, 26" CvType="Button" DesignTimeRectangle="404, 972, 173, 50" ElementType="Button" Guid="cd50b827-62b1-46b2-a74b-98bf36610e48" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV">
+                        <uix:Target.CvTextArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_69">Aplicar filtros</Literal>
+                          </InArgument>
+                        </uix:Target.CvTextArgument>
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_68" xml:space="preserve">&lt;webctrl tag='BUTTON' type='secondary' class='ccbutton button secondary  primary rounded ' aaname='Aplicar filtros' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Aplicar filtros' /&gt;</Literal>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.ElementVisibilityArgument>
+                    <InArgument x:TypeArguments="uix:NElementVisibility">
+                      <Literal x:TypeArguments="uix:NElementVisibility" sap2010:WorkflowViewState.IdRef="Literal`1_58" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.ElementVisibilityArgument>
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_61">&lt;webctrl class='ng-star-inserted' parentid='pdfContainer' tag='SPAN' type='' aaname='Aplicar filtros' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Aplicar filtros' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                  <uix:TargetAnchorable.ScopeSelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_59">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+                    </InArgument>
+                  </uix:TargetAnchorable.ScopeSelectorArgument>
+                  <uix:TargetAnchorable.WaitForReadyArgument>
+                    <InArgument x:TypeArguments="uix:NWaitForReady">
+                      <Literal x:TypeArguments="uix:NWaitForReady" sap2010:WorkflowViewState.IdRef="Literal`1_60" Value="Interactive" />
+                    </InArgument>
+                  </uix:TargetAnchorable.WaitForReadyArgument>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NExtractDataGeneric x:TypeArguments="sd2:DataTable" DisplayName="Extract Table Data 'AdministraciÃƒÂ³n incluidaÃ¢â‚¬Â¦'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Value'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Metros'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Habitaciones'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column5' Name='Bañoss'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column6' Name='Localidad'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='ciencuadras-specs-results' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='ciencuadras-specs-results' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='ciencuadras-specs-results' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='3' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column6' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='ciencuadras-card' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_15" LimitExtractionTo="None" ScopeIdentifier="d6f2c422-295e-499b-8fc0-5a8a9461d886" Version="V5">
+              <uix:NExtractDataGeneric.ContinueOnError>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <Literal x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="Literal`1_39" Value="True" />
+                </InArgument>
+              </uix:NExtractDataGeneric.ContinueOnError>
+              <uix:NExtractDataGeneric.ExtractedData>
+                <OutArgument x:TypeArguments="sd2:DataTable">
+                  <VisualBasicReference x:TypeArguments="sd2:DataTable" ExpressionText="vSDT" sap2010:WorkflowViewState.IdRef="VisualBasicReference`1_1" />
+                </OutArgument>
+              </uix:NExtractDataGeneric.ExtractedData>
+              <uix:NExtractDataGeneric.HealingAgentBehavior>
+                <InArgument x:TypeArguments="uix:NChildHealingAgentBehavior">
+                  <Literal x:TypeArguments="uix:NChildHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_40" />
+                </InArgument>
+              </uix:NExtractDataGeneric.HealingAgentBehavior>
+              <uix:NExtractDataGeneric.InputDataTable>
+                <InArgument x:TypeArguments="sd2:DataTable">
+                  <VisualBasicValue x:TypeArguments="sd2:DataTable" ExpressionText="vSDT" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                </InArgument>
+              </uix:NExtractDataGeneric.InputDataTable>
+              <uix:NExtractDataGeneric.MaximumResults>
+                <InArgument x:TypeArguments="x:Int32">
+                  <Literal x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="Literal`1_37" />
+                </InArgument>
+              </uix:NExtractDataGeneric.MaximumResults>
+              <uix:NExtractDataGeneric.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.ciencuadras.com/arriendo/apartamento/hasta-2500000?v=medellin" ContentHash="_7corz7A00iXVyQY7qR0VA" DesignTimeRectangle="627, 440, 1263, 2380" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;ciencuadras-root&amp;gt;ciencuadras-shell-app&amp;gt;main&amp;gt;div&amp;gt;ciencuadras-result-entry&amp;gt;main&amp;gt;ciencuadras-container-load&amp;gt;ciencuadras-container-middle&amp;gt;section&amp;gt;section&amp;gt;section&amp;gt;section&amp;gt;ciencuadras-list-cards&amp;gt;div' parentid='pdfContainer' tag='DIV' /&gt;" Guid="1fd2e99e-2103-440f-bb5e-328fc8aebb94" InformativeScreenshot="ed5ca6e4838569b14d9aecbfe7cf622f.jpg" Reference="gmLmTZsweUuVZUTtZ26j-w/GQkKhmuj9UuULpDODMiaeQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia Hasta $ 2.500.000,00' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NExtractDataGeneric.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NExtractDataGeneric>
+            <ui:AppendWriteCsvFile PathResource="{x:Null}" AddHeaders="True" CsvAction="Write" Delimitator="Semicolon" DelimitatorForViewModel="Semicolon" DisplayName="Write CSV" sap:VirtualizedContainerService.HintSize="416,264" sap2010:WorkflowViewState.IdRef="AppendWriteCsvFile_3" ShouldQuote="True">
+              <ui:AppendWriteCsvFile.DataTable>
+                <InArgument x:TypeArguments="sd2:DataTable">
+                  <VisualBasicValue x:TypeArguments="sd2:DataTable" ExpressionText="vSDT" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                </InArgument>
+              </ui:AppendWriteCsvFile.DataTable>
+              <ui:AppendWriteCsvFile.FilePath>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_41">C:/Users/sebas/Documents/UiPath/Real Estate Bot/RealState.csv</Literal>
+                </InArgument>
+              </ui:AppendWriteCsvFile.FilePath>
+            </ui:AppendWriteCsvFile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.CloseMode>
+        <InArgument x:TypeArguments="uix:NAppCloseMode">
+          <Literal x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="Literal`1_2" />
+        </InArgument>
+      </uix:NApplicationCard.CloseMode>
+      <uix:NApplicationCard.HealingAgentBehavior>
+        <InArgument x:TypeArguments="uix:NHealingAgentBehavior">
+          <Literal x:TypeArguments="uix:NHealingAgentBehavior" sap2010:WorkflowViewState.IdRef="Literal`1_3" />
+        </InArgument>
+      </uix:NApplicationCard.HealingAgentBehavior>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.OpenMode>
+        <InArgument x:TypeArguments="uix:NAppOpenMode">
+          <Literal x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="Literal`1_1" Value="IfNotOpen" />
+        </InArgument>
+      </uix:NApplicationCard.OpenMode>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1929, -9, 1938, 1038" BrowserType="Chrome" ContentHash="fUFvDN2unkWfcZSx1VUmPA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVDhPfVE9SJVRGP5e5RIZXEKJBKnBtX+HEO57KIhGQSxbtHy5Dg0J0SWiLbHFzUW670OGCQZN9jPYEjS4aPc9Q/+j0NJQgVFRYnXj1OfnuV/mA+9ynp9zzvMmySZgtVZWK7HaGVbrY7XDrNaS1/0DVtvBamVWW2C1j6z2ndW+sdo7VrvHaidZrTnv+4P01ilWW2O1+n9mhdUqrFbImwusNu7gnzn4GQd/y8Evsdoqq3128E8c/LSDv+/g37DaQEOAgz9SqtYqbZfu9pPgGgmuF0dmB7snFy90TSyUt5+/XSbBWHP5ZqVzdP60g7/KaruzgFK11lEYnrpIQ3hPgjoJfpLgQXL2xt7kXLWbBD49rydD+qI4Mtt7Yvp5WxZAgn0keLsuIsEcCXZF/AESvIz4x02CYhwwSIJfKblKgp6M3NCMRgEfSHAwJgeigK8kON7g/qupbBXQRZL9P8w4CbJ9k2AnCR5FfI0ErXHANhLciQQrYRMkOEqCYySYIcFayoWCL2fmKCQU9SoKCcJPJPgSnYV5SIKNDcRIb3udM6xP6Ch8ozPvawAJDqXCH5E5vGKSBO15/aYIBZHgCgmWSfCUBKdCT3ndliBBEwn2k2BPnovxG38nKCAGbz/BAAAAAElFTkSuQmCC" InformativeScreenshot="b7b3fc53b51b3912a56ae0bb8d5ee41f.jpg" Reference="gmLmTZsweUuVZUTtZ26j-w/22QcmJ1ufkGkv8kLMe2G3g" Version="V3">
+          <uix:TargetApp.Selector>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_4">&lt;html app='chrome.exe' title='Apartamentos en Arriendo en Colombia' /&gt;</Literal>
+            </InArgument>
+          </uix:TargetApp.Selector>
+          <uix:TargetApp.Url>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_5">https://www.ciencuadras.com/arriendo/apartamento?v=medellin</Literal>
+            </InArgument>
+          </uix:TargetApp.Url>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
